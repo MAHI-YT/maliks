@@ -188,7 +188,7 @@ async function connectToWA() {
 ┗━━━━━━━━━━━━━━━━━━┛
 
 ⭐ *Channel:* https://whatsapp.com/channel/0029Vb5dDVO59PwTnL86j13J  
-⭐ *GitHub:* https://github.com/ERFAN-Md/DARKZONE-MD/fork `;
+⭐ *GitHub:* https://github.com/ERFAN-Md/DARKZONE-MD/fork`;
                     
                     await conn.sendMessage(conn.user.id, { 
                         image: { url: `https://files.catbox.moe/4964gx.jpg` }, 
