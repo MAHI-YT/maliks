@@ -16,37 +16,51 @@ cmd({
 async (conn, mek, m, { from, sender, pushname, reply }) => {
     try {
         const dec = `
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┏━━━━━━━━━━━━━━━━━━━━┓
 ┃ 🔰 *${config.BOT_NAME} CONTROL PANEL* 🔰
-┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃━━━━━━━━━━━━━━━━━━━━
 ┃ 👑 *Owner:* ${config.OWNER_NAME}
 ┃ ⚙️ *Mode:* ${config.MODE}
 ┃ 💻 *Platform:* Heroku
 ┃ 🧠 *Type:* NodeJs (Multi Device)
 ┃ ⌨️ *Prefix:* ${config.PREFIX}
 ┃ 🧾 *Version:* 3.0.0 Beta
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┗━━━━━━━━━━━━━━━━━━┛
 
-┏━━━〔 ⚡ *Command Menu* ⚡ 〕━━━┓
-┃ ▶️ *admin-events*
-┃ ▶️ *welcome*
-┃ ▶️ *setprefix*
-┃ ▶️ *mode*
-┃ ▶️ *auto_typing*
-┃ ▶️ *always_online*
-┃ ▶️ *auto_reacording*
-┃ ▶️ *status_view*
-┃ ▶️ *status_react*
-┃ ▶️ *read_message*
-┃ ▶️ *auto_sticker*
-┃ ▶️ *anti_bad*
-┃ ▶️ *auto_reply*
-┃ ▶️ *auto_voice*
-┃ ▶️ *custom_reacts*
-┃ ▶️ *auto_react*
-┃ ▶️ *anti_link*
-┃ ▶️ *status_reply*
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━┓
+┃ *⚡ CONTROL COMMAND*
+┃━━━━━━━━━━━━━━━━━━━━━━━
+┃ 🧠 *Total Commands:* 27
+┃━━━━━━━━━━━━━━━━━━━
+
+┃ 💎 *setbotimage*
+┃ ⚙️ *setprefix*
+┃ 🪄 *setbotname*
+┃ 👑 *setownername*
+┃ 🎉 *welcome*
+┃ 👋 *goodbye*
+┃ 🛰️ *mode*
+┃ 🚫 *anti-call*
+┃ ⌨️ *autotyping*
+┃ 🌐 *alwaysonline*
+┃ 🎧 *autorecoding*
+┃ 💬 *autostatusreact*
+┃ 👀 *autostatusview*
+┃ 📖 *autoread*
+┃ 🚷 *antibad*
+┃ 🧩 *autosticker*
+┃ 🤖 *autoreply*
+┃ 💫 *autoreact*
+┃ 🕊️ *autostatusreply*
+┃ 🛡️ *antibot*
+┃ 🔗 *antilink*
+┃ 💬 *mention-reply*
+┃ 🧭 *admin-events*
+┃ 💥 *ownerreact*
+┃ ❌ *deletelink*
+┃ 🎭 *customreact*
+┃ 🔧 *setreacts*
+┗━━━━━━━━━━━━━━━━━━┛
 
 💬 *${config.DESCRIPTION}*
 `;
