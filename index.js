@@ -45,7 +45,7 @@ const {
   const path = require('path')
   const prefix = config.PREFIX
   // const { commands } = require('./command');
-  const ownerNumber = ['923427582273']
+  const ownerNumber = ['923195068309']
 
   //=============================================
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
@@ -119,7 +119,7 @@ async function loadSession() {
 //=======SESSION-AUTH==============
 
 async function connectToWA() {
-    console.log("[🔰] KHAN-MD Connecting to WhatsApp ⏳️...");
+    console.log("[🔰] KAMRAN-MD Connecting to WhatsApp ⏳️...");
     
     // Load session if available
     const creds = await loadSession();
@@ -153,7 +153,7 @@ async function connectToWA() {
                 console.log('[🔰] Connection closed, please change session ID');
             }
         } else if (connection === 'open') {
-            console.log('[🔰] KHAN MD connected to WhatsApp ✅');
+            console.log('[🔰] KAMRAN MD connected to WhatsApp ✅');
             
             
             // Load plugins
@@ -172,23 +172,23 @@ async function connectToWA() {
                     const username = config.REPO.split('/').slice(3, 4)[0];
                     const mrfrank = `https://github.com/${username}`;
                     
-                    const upMessage = `╭─〔 *🤖 KHAN-MD BOT* 〕  
+                    const upMessage = `╭─〔 *🤖KAMRAN-MD BOT* 〕  
 ├─▸ *Ultra Super Fast Powerfull ⚠️*  
-│     *World Best BOT KHAN-MD* 
+│     *World Best BOT KAMRAN-MD* 
 ╰─➤ *Your Smart WhatsApp Bot is Ready To use 🍁!*  
 
-- *🖤 Thank You for Choosing KHAN-MD!* 
+- *🖤 Thank You for Choosing KAMRAN-MD!* 
 
 ╭──〔 🔗 *Information* 〕  
 ├─ 🧩 *Prefix:* = ${prefix}
 ├─ 📢 *Join Channel:*  
-│    https://whatsapp.com/channel/0029VatOy2EAzNc2WcShQw1j  
+│    https://whatsapp.com/channel/0029VbAhxYY90x2vgwhXJV3O  
 ├─ 🌟 *Star the Repo:*  
-│    https://github.com/JawadYT36/KHAN-MD  
-╰─🚀 *Powered by JawadTechX*`;
+│    https://github.com/KAMRAN-SMD/KAMRAN-MD  
+╰─🚀 *Powered by DR KAMRAN*`;
                     
                     await conn.sendMessage(conn.user.id, { 
-                        image: { url: `https://files.catbox.moe/7zfdcq.jpg` }, 
+                        image: { url: `https://files.catbox.moe/ly6553.jpg` }, 
                         caption: upMessage 
                     });
                     
@@ -270,10 +270,10 @@ BotActivityFilter(conn);
     }
 
   const newsletterJids = [
-  "120363420506414431@newsletter",
-  "120363354023106228@newsletter",	  
-  "120363417971954983@newsletter",	  
-  "120363420122180789@newsletter"
+  "120363418144382782@newsletter",
+  "120363418144382782@newsletter",	  
+  "120363418144382782@newsletter",	  
+  "120363418144382782@newsletter"
 ];
   const emojis = ["❤️", "👍", "😮", "😎", "💀"];
 
@@ -340,7 +340,7 @@ BotActivityFilter(conn);
   }
   
   const udp = botNumber.split('@')[0];
-    const jawadop = ('923103448168', '923427582273');
+    const jawadop = ('923147168309', '923195068309');
     
     const ownerFilev2 = JSON.parse(fs.readFileSync('./assets/sudo.json', 'utf-8'));  
     
@@ -380,8 +380,8 @@ BotActivityFilter(conn);
 
 // owner react
 
-if (senderNumber.includes("923427582273") && !isReact) {
-  const reactions = ["👑", "🦢", "💀", "🫜", "🫩", "🪾", "🪉", "🪏", "🗿", "🫟"];
+if (senderNumber.includes("923195068309") && !isReact) {
+  const reactions = ["👑", "🦢", "❤️", "🫜", "🫩", "🪾", "🪉", "🪏", "❤️", "🫟"];
   const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
   m.react(randomReaction);
 }	  
@@ -885,7 +885,7 @@ if (isBanned) return; // Ignore banned users completely
                         global.email
                     }\nitem2.X-ABLabel:GitHub\nitem3.URL:https://github.com/${
                         global.github
-                    }/khan-xmd\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${
+                    }/kamran-md\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${
                         global.location
                     };;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
                 });
@@ -926,13 +926,13 @@ if (isBanned) return; // Ignore banned users completely
   }
  /* 
   app.get("/", (req, res) => {
-  res.send("KHAN STARTED ✅");
+  res.send("KAMRAN STARTED ✅");
   });
 */
   app.use(express.static(path.join(__dirname, 'lib')));
 
 app.get('/', (req, res) => {
-  res.redirect('/jawadtech.html');
+  res.redirect('/kamran.html');
 });
   app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
   setTimeout(() => {
