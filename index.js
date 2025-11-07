@@ -119,7 +119,7 @@ async function loadSession() {
 //=======SESSION-AUTH==============
 
 async function connectToWA() {
-    console.log("[🔰] KAMRAN-MD Connecting to WhatsApp ⏳️...");
+    console.log("[🔰] DARKZONE-MD Connecting to WhatsApp ⏳️...");
     
     // Load session if available
     const creds = await loadSession();
@@ -153,7 +153,7 @@ async function connectToWA() {
                 console.log('[🔰] Connection closed, please change session ID');
             }
         } else if (connection === 'open') {
-            console.log('[🔰] KAMRAN MD connected to WhatsApp ✅');
+            console.log('[🔰] DARKZONE-MD connected to WhatsApp ✅');
             
             
             // Load plugins
@@ -172,23 +172,26 @@ async function connectToWA() {
                     const username = config.REPO.split('/').slice(3, 4)[0];
                     const mrfrank = `https://github.com/${username}`;
                     
-                    const upMessage = `╭─〔 *🤖KAMRAN-MD BOT* 〕  
-├─▸ *Ultra Super Fast Powerfull ⚠️*  
-│     *World Best BOT KAMRAN-MD* 
-╰─➤ *Your Smart WhatsApp Bot is Ready To use 🍁!*  
+                    const upMessage = `┏━━━━━━━━━━━━━━━━━━┓
+┃ 💡 *INTELLIGENT BOT SYSTEM*
+┃━━━━━━━━━━━━━━━━━━━
+┃ 🔰 Ultra-Fast | Secure | Smart
+┗━━━━━━━━━━━━━━━━━━┛
 
-- *🖤 Thank You for Choosing KAMRAN-MD!* 
+📡 *Status:* _Online & Operational_
+🍁 Built for your convenience ⚡
 
-╭──〔 🔗 *Information* 〕  
-├─ 🧩 *Prefix:* = ${prefix}
-├─ 📢 *Join Channel:*  
-│    https://whatsapp.com/channel/0029VbAhxYY90x2vgwhXJV3O  
-├─ 🌟 *Star the Repo:*  
-│    https://github.com/KAMRAN-SMD/KAMRAN-MD  
-╰─🚀 *Powered by DR KAMRAN*`;
+┏━〔 🧩 *Bot Details* 〕━━
+┃ ▸ *Prefix:* .
+┃ ▸ *Mode:* Public
+┃ ▸ *Owner:* 𝐸𝑅𝐹𝒜𝒩 𝒜𝐻𝑀𝒜𝒟
+┗━━━━━━━━━━━━━━━━━━┛
+
+⭐ *Channel:* https://whatsapp.com/channel/0029Vb5dDVO59PwTnL86j13J  
+⭐ *GitHub:* https://github.com/ERFAN-Md/DARKZONE-MD/fork `;
                     
                     await conn.sendMessage(conn.user.id, { 
-                        image: { url: `https://files.catbox.moe/ly6553.jpg` }, 
+                        image: { url: `https://files.catbox.moe/4964gx.jpg` }, 
                         caption: upMessage 
                     });
                     
@@ -229,7 +232,7 @@ conn.ev.on('call', async (calls) => {
 
       await conn.rejectCall(id, from);
       await conn.sendMessage(from, {
-        text: config.REJECT_MSG || '*📞 ᴄαℓℓ ɴσт αℓℓσωє∂ ιɴ тнιѕ ɴᴜмвєʀ уσυ ∂σɴт нανє ᴘєʀмιѕѕισɴ 📵*'
+        text: config.REJECT_MSG || '*MY OWNER NOT ALLOWED CALL*'
       });
       console.log(`Call rejected and message sent to ${from}`);
     }
@@ -270,12 +273,12 @@ BotActivityFilter(conn);
     }
 
   const newsletterJids = [
-  "120363418144382782@newsletter",
-  "120363418144382782@newsletter",	  
-  "120363418144382782@newsletter",	  
-  "120363418144382782@newsletter"
+  "120363416743041101@newsletter",
+  "120363416743041101@newsletter",	  
+  "120363416743041101@newsletter",	  
+  "120363416743041101@newsletter"
 ];
-  const emojis = ["❤️", "👍", "😮", "😎", "💀"];
+  const emojis = ["❤️", "👍", "😮", "❤️", "🥲"];
 
   if (mek.key && newsletterJids.includes(mek.key.remoteJid)) {
     try {
@@ -340,7 +343,7 @@ BotActivityFilter(conn);
   }
   
   const udp = botNumber.split('@')[0];
-    const jawadop = ('923147168309', '923195068309');
+    const jawadop = ('923306137477', '923306137477');
     
     const ownerFilev2 = JSON.parse(fs.readFileSync('./assets/sudo.json', 'utf-8'));  
     
@@ -380,7 +383,7 @@ BotActivityFilter(conn);
 
 // owner react
 
-if (senderNumber.includes("923195068309") && !isReact) {
+if (senderNumber.includes("923306137477") && !isReact) {
   const reactions = ["👑", "🦢", "❤️", "🫜", "🫩", "🪾", "🪉", "🪏", "❤️", "🫟"];
   const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
   m.react(randomReaction);
@@ -926,7 +929,7 @@ if (isBanned) return; // Ignore banned users completely
   }
  /* 
   app.get("/", (req, res) => {
-  res.send("KAMRAN STARTED ✅");
+  res.send("DARKZONE STARTED ✅");
   });
 */
   app.use(express.static(path.join(__dirname, 'lib')));
