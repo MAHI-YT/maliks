@@ -13,7 +13,7 @@
     "restart": "pm2 restart DARKZONE-MD"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "github:Jeliostarr/DEV-Baileys",
+    "@whiskeysockets/baileys": "6.7.21",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@dark-yasiya/yt-dl.js": "1.0.5",
     "@dark-yasiya/scrap": "1.0.1",
@@ -40,7 +40,7 @@
     "fs": "^0.0.1-security",
     "fs-extra": "^11.1.0",
     "google-tts-api": "^2.0.2",
-    "jimp": "^0.16.1",
+    "jimp": "1.6.0",
     "megajs": "^1.3.7",
     "moment-timezone": "^0.6.0",
     "mongoose": "^8.0.0",
