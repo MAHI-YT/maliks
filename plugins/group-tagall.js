@@ -1,6 +1,6 @@
 const config = require('../config')
 const { cmd, commands } = require('../command')
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
+const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('../lib/functions')
 
 cmd({
     pattern: "tagall",
@@ -11,46 +11,67 @@ cmd({
     use: '.tagall [message]',
     filename: __filename
 },
-async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAdmins, prefix, command, args, body }) => {
-    try {
-        if (!isGroup) return reply("❌ This command can only be used in groups.");
-        
-        const botOwner = conn.user.id.split(":")[0]; // Extract bot owner's number
-        const senderJid = senderNumber + "@s.whatsapp.net";
+async (conn, mek, m, { from, participants, reply, isGroup, sender, senderNumber, groupAdmins, prefix, command, args, body }) => {
 
-        if (!groupAdmins.includes(senderJid) && senderNumber !== botOwner) {
-            return reply("❌ Only group admins or the bot owner can use this command.");
+    try {
+
+        // --- GROUP ONLY CHECK ---
+        if (!isGroup) return reply("❌ This command can only be used in groups.");
+
+        // --- GENERATE CORRECT JIDs ---
+        const botJid = conn.user.id.includes(":") ? conn.user.id.split(":")[0] + "@s.whatsapp.net" : conn.user.id;
+        const senderJid = sender;
+
+        // --- BOT OWNER CHECK ---
+        const botOwner = config.OWNER_NUMBER ? config.OWNER_NUMBER.replace(/[^0-9]/g, '') + "@s.whatsapp.net" : botJid;
+
+        // --- ADMIN VALIDATION ---
+        const isSenderAdmin = groupAdmins.includes(senderJid);
+        const isBotAdmin = groupAdmins.includes(botJid);
+
+        // Only group admins OR bot owner can use
+        if (!isSenderAdmin && senderJid !== botOwner) {
+            return reply("❌ Only group *admins* or the *bot owner* can use this command.");
         }
 
-        // Ensure group metadata is fetched properly
+        // No "I need admin" issue — Only check if bot must send mentions
+        if (!isBotAdmin) {
+            return reply("❌ I need *admin permissions* to tag all members.");
+        }
+
+        // --- FETCH GROUP INFO ---
         let groupInfo = await conn.groupMetadata(from).catch(() => null);
         if (!groupInfo) return reply("❌ Failed to fetch group information.");
 
-        let groupName = groupInfo.subject || "Unknown Group";
-        let totalMembers = participants ? participants.length : 0;
+        const groupName = groupInfo.subject || "Group";
+        const totalMembers = participants.length;
+
         if (totalMembers === 0) return reply("❌ No members found in this group.");
 
-        let emojis = ['📢', '🔊', '🌐', '🔰', '❤‍🩹', '🤍', '🖤', '🩵', '📝', '💗', '🔖', '🪩', '📦', '🎉', '🛡️', '💸', '⏳', '🗿', '🚀', '🎧', '🪀', '⚡', '🚩', '🍁', '🗣️', '👻', '⚠️', '🔥'];
+        // --- MESSAGE EXTRACTION ---
+        let message = body.replace(prefix + command, "").trim();
+        if (!message) message = "Attention Everyone";
+
+        let emojis = ['📢','🔊','🌐','🔰','❤‍🩹','🤍','🖤','🩵','📝','💗','🔖','🪩','📦','🎉','🛡️','💸','⏳','🗿','🚀','🎧','🪀','⚡','🚩','🍁','🗣️','👻','⚠️','🔥'];
         let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
-        // Proper message extraction
-        let message = body.slice(body.indexOf(command) + command.length).trim();
-        if (!message) message = "Attention Everyone"; // Default message
-
-        let teks = `▢ Group : *${groupName}*\n▢ Members : *${totalMembers}*\n▢ Message: *${message}*\n\n┌───⊷ *MENTIONS*\n`;
+        let teks = `▢ Group : *${groupName}*\n▢ Members : *${totalMembers}*\n▢ Message : *${message}*\n\n┌───⊷ *MENTIONS*\n`;
 
         for (let mem of participants) {
-            if (!mem.id) continue; // Prevent undefined errors
             teks += `${randomEmoji} @${mem.id.split('@')[0]}\n`;
         }
 
         teks += "└──✪ DARKZONE ┃ MD ✪──";
 
-        conn.sendMessage(from, { text: teks, mentions: participants.map(a => a.id) }, { quoted: mek });
+        await conn.sendMessage(
+            from,
+            { text: teks, mentions: participants.map(m => m.id) },
+            { quoted: mek }
+        );
 
     } catch (e) {
         console.error("TagAll Error:", e);
-        reply(`❌ *Error Occurred !!*\n\n${e.message || e}`);
+        reply(`❌ Error Occurred!\n\n${e.message}`);
     }
-});
 
+});
