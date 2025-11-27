@@ -13,7 +13,7 @@
     "restart": "pm2 restart DARKZONE-MD"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "github:ali-sain/baileys-pro",
+    "@whiskeysockets/baileys": "^6.7.18",
 
 
     "@adiwajshing/keyed-db": "^0.2.4",
