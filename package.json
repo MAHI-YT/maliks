@@ -13,8 +13,7 @@
     "restart": "pm2 restart DARKZONE-MD"
   },
   "dependencies": {
-    
-    "@adiwajshing/keyed-db": "^0.2.4",
+    "@whiskeysockets/baileys": "^6.7.18",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@dark-yasiya/yt-dl.js": "1.0.5",
     "@dark-yasiya/scrap": "1.0.1",
